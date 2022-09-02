@@ -1,2 +1,2 @@
 #!/bin/bash
-chgrp John hello
+chgrp John school
