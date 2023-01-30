@@ -5,7 +5,7 @@
 #  dislays "Best School" for the other iteration
 
 
-count=0
+count=1
 
 while [ $count -lt 10 ]
 do
