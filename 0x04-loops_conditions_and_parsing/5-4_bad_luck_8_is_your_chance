@@ -4,6 +4,7 @@
 #  dislays "good luck" for the 8th loop iteration
 #  dislays "Best School" for the other iteration
 
+
 count=0
 
 while [ $count -lt 10 ]
