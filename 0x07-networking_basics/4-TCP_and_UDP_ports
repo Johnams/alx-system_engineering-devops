@@ -1,0 +1,5 @@
+#!/usr/bin/anv bash
+# Displays listening ports that shows listening sockets
+#+ that shows the PID and name of the program to which each socket belongs
+
+netstat -l --program
