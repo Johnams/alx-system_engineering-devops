@@ -1,0 +1,30 @@
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.6 -y
+
+sudo apt update
+sudo apt install haproxy -y
+
+# edit config file
+server_config=\
+
+frontend johnams-frontend
+        bind *:80
+        mode http
+        default_backend johnams-backend
+
+backend johnams-backend
+        mode http
+        balance roundrobin
+        server 120409-web-01 52.91.183.242 check
+        server 120409-web-02 54.162.102.9 check
+echo "$server_config" | sudo tee a- /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+
+echo "ENABLED=1" | sudo tee -a /etc/hdefault/haproxy
+
+sudo service haproxy restart
+
